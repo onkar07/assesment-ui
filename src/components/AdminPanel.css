@@ -1,0 +1,168 @@
+/* Color Variables */
+:root {
+  --primary-blue: #2563eb;
+  --secondary-blue: #1e40af;
+  --light-blue: #dbeafe;
+  --dark-blue: #1e3a8a;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --gray-light: #f3f4f6;
+  --border-color: #e5e7eb;
+}
+
+/* Admin Panel Layout */
+.admin-panel {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
+  padding: 20px;
+}
+
+.admin-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+.admin-title {
+  color: var(--dark-blue);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.admin-subtitle {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Action Buttons */
+.admin-actions {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px -1px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+/* Sections */
+.editing-section,
+.quizzes-section {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-panel {
+    padding: 15px;
+  }
+  
+  .admin-header {
+    padding: 20px 15px;
+    margin-bottom: 30px;
+  }
+  
+  .admin-title {
+    font-size: 2rem;
+  }
+  
+  .admin-subtitle {
+    font-size: 1rem;
+  }
+  
+  .editing-section,
+  .quizzes-section {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-panel {
+    padding: 10px;
+  }
+  
+  .admin-title {
+    font-size: 1.75rem;
+  }
+  
+  .editing-section,
+  .quizzes-section {
+    padding: 15px 10px;
+  }
+}
+
+/* Animation for smooth transitions */
+.admin-content > * {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading state */
+.admin-panel.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
