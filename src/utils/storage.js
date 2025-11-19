@@ -135,5 +135,5 @@ export async function deleteQuiz(id) {
   const res = await fetch(`${QUIZZES_URL}/${encodeURIComponent(id)}`, {
     method: "DELETE"
   });
-  return handleResponse(res);
+  return "Deleted";
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import AdminPanel from "./components/AdminPanel";
-import QuizTakeList from "./components/QuizTakeList";
-import TakeQuiz from "./components/TakeQuiz";
-import ResultView from "./components/ResultView";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
+import QuizTakeList from "./components/QuizTakeList/QuizTakeList";
+import TakeQuiz from "./components/TakeQuiz/TakeQuiz";
+import ResultView from "./components/ResultView/ResultView";
 import envConfig from "./config/envConfig";
 
 export default function App() {

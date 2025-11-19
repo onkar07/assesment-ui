@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import QuizForm from "./QuizForm";
-import QuizListAdmin from "./QuizListAdmin";
-import { loadQuizzes, upsertQuiz } from "../utils/storage";
+import QuizForm from "../QuizForm/QuizForm.jsx";
+import QuizListAdmin from "../QuizListAdmin/QuizListAdmin.jsx";
+import { loadQuizzes, upsertQuiz, deleteQuiz } from "../../utils/storage";
 import "./AdminPanel.css"; // We'll create this CSS file
 
 export default function AdminPanel() {
@@ -15,7 +15,7 @@ export default function AdminPanel() {
         setQuizzes(qs);
       } catch (e) {
         console.error(e);
-        alert("Failed to load quizzes");
+        // alert("Failed to load quizzes");
       }
     }
     load();
@@ -35,9 +35,7 @@ export default function AdminPanel() {
 }
 
   function handleDelete(id) {
-    const newQs = quizzes.filter(q => String(q.id) !== String(id));
-    setQuizzes(newQs);
-    handleSave(newQs);
+    deleteQuiz(id);
   }
 
   return (
@@ -72,7 +70,10 @@ export default function AdminPanel() {
           <QuizListAdmin 
             quizzes={quizzes} 
             onEdit={q => setEditingQuiz(q)} 
-            onDelete={handleDelete} 
+            onDelete={q => {
+              console.log("On delete : ",q)
+              handleDelete(q)
+            }} 
           />
         </div>
       </div>
